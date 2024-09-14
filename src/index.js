@@ -43,6 +43,6 @@ app.post("/login",async (req,res)=>{
     }
 });
 
-app.listen(PORT,()=>{
+app.listen(port,()=>{
     console.log("Port connected");
 });
