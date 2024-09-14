@@ -25,49 +25,187 @@
       } .btn { display: inline-block; margin-top: 10px; } } @media (max-width:
       480px) { h1, h2 { font-size: 24px; } .intro p { font-size: 16px; }
       .services { flex-direction: column; } .service { width: 100%; } }
-
+      .del{
+        text-decoration: none;
+        font-weight: 600;
+        color:blue;
+      }
+      .set{
+        text-align: center;
+      }
+      /* -----------contact------- */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #45a049;
+    margin-right: 13px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 13px;
+    color: #ababab;
+    display: inline-block;
+    transition: trasform 0.5s;
+}
+.social-icons a:hover{
+    color:#45a049;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background:#45a049;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background:#262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
     </style>
+    <script
+      src="https://kit.fontawesome.com/dc771e8dfa.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <nav>
+      {{!-- <nav>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-      </nav>
+      </nav> --}}
       <h1>Welcome to My Website</h1>
     </header>
 
     <main>
       <section class="intro">
         <h2>About Me</h2>
-        <p>We provide top-notch services to help you succeed. Explore our
-          offerings and learn more about us.</p>
-        <a href="#" class="btn">Learn More</a>
+        <p>I am <b>Sameer</b> and I am an Electronics and Communication Engineering final year student
+          with robust skillsin data structures and algorithms, alongside
+          comprehensive training in MERN stack development. Adept at building
+          dynamic and responsive web applications, with a strong foundation in
+          JavaScript, Node.js, Express, React, and MongoDB. Demonstrates
+          excellent problem-solving abilities and a keen interest in
+          continuous learning and professional development. Eager to leverage
+          academic knowledge and technical skills to contribute to innovative
+          software engineering projects.
+        </p>
+        <a href="https://sameer-portfolio-k6qv.vercel.app/" class="btn">See More</a>
       </section>
-
+      <h2 class="set">My Work</h2>
       <section class="services">
-        <h2>Our Services</h2>
+        {{!-- <h2>My Work</h2> --}}
         <div class="service">
-          <h3>Service 1</h3>
-          <p>Description of service 1.</p>
+          <h3>Music Player App</h3>
+          <a href="https://music-player-pi-five.vercel.app/" class="del">Visit</a>
+          <p>A task scheduler app is designed to help users organize, track, and manage their tasks and to-do lists. It typically includes features for creating, updating, and deleting tasks.</p>
         </div>
         <div class="service">
-          <h3>Service 2</h3>
-          <p>Description of service 2.</p>
-        </div>
-        <div class="service">
-          <h3>Service 3</h3>
-          <p>Description of service 3.</p>
+          <h3>Task Scheduler App</h3>
+          <a href="https://task-scheduler-o31k.vercel.app/" class="del">Visit</a>
+          <p>This website is a clone of Spotify, enabling users to play songs, create folders and increase and decrease volume.</p>
         </div>
       </section>
+      <h2 class="set">Contact Me</h2>
+      <div id="contact"></div>
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <p><i class="fa-solid fa-envelope"></i> ojhasameer24@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91-7004388757</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/sameer.ojha.7965/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/?hl=en"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://github.com/Sameer172003"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/sameer-ojha-113956286/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-right">
+            <form action="" name="submit-to-google-sheet">
+              <input
+                type="text"
+                name="Name"
+                placeholder="Enter your name"
+                required
+              />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Enter your email"
+                required
+              />
+              <textarea
+                name="Message"
+                id=""
+                rows="6"
+                placeholder="Enter your message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
     </main>
-
     <footer>
       <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
+    {{!-- <a href="https://lordicon.com/">Icons by Lordicon.com</a> --}}
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxIBywOrM5X50fTEwTQJIzPJi3RanhmRngk84CCmqo7TpVcf8Rn_pWM-Uzm1dPmjuvO/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
