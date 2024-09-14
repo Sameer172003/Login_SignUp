@@ -7,6 +7,19 @@ mongoose.connect("mongodb://localhost:27017/LoginSignUp")
 .catch(()=>{
     console.log("Failed to Connect");
 });
+mongoose.connect('mongodb://localhost:27017/LoginSignUp', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000, // 30 seconds
+    socketTimeoutMS: 45000, // 45 seconds
+});
+
+mongoose.connect('mongodb://localhost:27017/LoginSignUp', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    poolSize: 10, // Default is 5
+});
+
 
 const LoginSchema=new mongoose.Schema({
     name:{
